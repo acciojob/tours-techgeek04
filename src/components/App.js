@@ -1,3 +1,4 @@
+import "regenerator-runtime/runtime";
 import React, { useState, useEffect } from "react";
 
 const url = "https://mock-api-for-tours.com/tours"; 
