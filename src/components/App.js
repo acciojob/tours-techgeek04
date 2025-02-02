@@ -1,7 +1,6 @@
-import "regenerator-runtime/runtime";
 import React, { useState, useEffect } from "react";
 
-const url = "https://mock-api-for-tours.com/tours"; 
+const url = "https://mock-api-for-tours.com/tours";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -61,18 +60,19 @@ const Tours = ({ tours, removeTour }) => {
 
 const Tour = ({ id, name, info, image, price, removeTour }) => {
   const [readMore, setReadMore] = useState(false);
+
   return (
     <div className="tour-card">
       <img src={image} alt={name} />
       <h2>{name}</h2>
       <h4>${price}</h4>
-      <p id={`tour-item-para-${id}`} data-testid={`tour-item-para-${id}`}>
+      <p id={`tour-item-para-${id}`}>
         {readMore ? info : `${info.substring(0, 200)}...`}
         <button onClick={() => setReadMore(!readMore)}>
           {readMore ? "Show less" : "Show more"}
         </button>
       </p>
-      <button id={`delete-btn-${id}`} data-testid={`delete-btn-${id}`} onClick={() => removeTour(id)}>
+      <button id={`delete-btn-${id}`} onClick={() => removeTour(id)}>
         Not Interested
       </button>
     </div>
