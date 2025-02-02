@@ -66,13 +66,13 @@ const Tour = ({ id, name, info, image, price, removeTour }) => {
       <img src={image} alt={name} />
       <h2>{name}</h2>
       <h4>${price}</h4>
-      <p id={`tour-item-para-${id}`}>
+      <p id={`tour-item-para-${id}`} data-testid={`tour-item-para-${id}`}>
         {readMore ? info : `${info.substring(0, 200)}...`}
         <button onClick={() => setReadMore(!readMore)}>
           {readMore ? "Show less" : "Show more"}
         </button>
       </p>
-      <button id={`delete-btn-${id}`} onClick={() => removeTour(id)}>
+      <button id={`delete-btn-${id}`} data-testid={`delete-btn-${id}`} onClick={() => removeTour(id)}>
         Not Interested
       </button>
     </div>
